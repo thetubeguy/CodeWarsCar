@@ -21,18 +21,18 @@ namespace CodeWarsCar
 
     
 
-        public Car()
+        public Car(double fuellevel)
         {
             Engine_And_Fuel_System = new Engine_And_FuelTank();
             Engine = Engine_And_Fuel_System;
             FuelTank = Engine_And_Fuel_System;
             fuelTankDisplay = Engine_And_Fuel_System;
-            FuelTank.Refuel(20);
+            FuelTank.Refuel(fuellevel);
                     
 
         }
 
-        public Car(double fuelLevel) : this() { FuelTank.Refuel(fuelLevel - 20); }
+        public Car() : this(20) { }
         
         public void Refuel(double liters) { FuelTank.Refuel(liters); }
 
